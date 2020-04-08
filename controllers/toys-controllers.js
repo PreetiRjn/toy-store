@@ -1,15 +1,5 @@
-const mongoose = require('mongoose');
+const Toy = require('../models/toy');
 
-const Toy = require('./models/toy');
-const url = 'mongodb+srv://preeti:mydatabase@cluster0-pojb7.mongodb.net/toystore?retryWrites=true&w=majority';
-
-mongoose.connect(url, {useUnifiedTopology: true, useNewUrlParser: true })
-        .then(()=>{
-            console.log('Connected to Database');
-        })
-        .catch((error)=>{
-            console.log('Connection to database failed -- ',error);
-        });
 const newToy = async(req, res, next)=>{
     const { category, name, price, storeid, currency} = req.body;
     const newtoy = new Toy({
