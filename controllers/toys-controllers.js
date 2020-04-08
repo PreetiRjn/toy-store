@@ -1,9 +1,9 @@
 const Toy = require('../models/toy');
 
 const newToy = async(req, res, next)=>{
-    const { category, name, price, storeid, currency} = req.body;
+    const { category, name, price, storeid, currency, quantity} = req.body;
     const newtoy = new Toy({
-            category, name, price, storeid, currency
+            category, name, price, storeid, currency, quantity
         });
     let result = '';
     try{

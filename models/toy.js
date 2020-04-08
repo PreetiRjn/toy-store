@@ -5,7 +5,8 @@ const toySchema = new mongoose.Schema({
     name : { type : String, required : true },
     price : { type : Number, required : true },
     currency : { type : String, required : true },
-    storeid : { type : String, required : true }
+    storeid : { type : String, required : true },
+    quantity : { type : Number, required : true }
 });
 
 module.exports = mongoose.model('Toy', toySchema);
